@@ -29,9 +29,9 @@ class Twig_Tests_ErrorTest extends \PHPUnit\Framework\TestCase
     public function testTwigExceptionGuessWithMissingVarAndArrayLoader()
     {
         $loader = new ArrayLoader([
-            'base.html' => '{% block content %}{% endblock %}',
+            'base.html.twig' => '{% block content %}{% endblock %}',
             'index.html' => <<<EOHTML
-{% extends 'base.html' %}
+{% extends 'base.html.twig' %}
 {% block content %}
     {{ foo.bar }}
 {% endblock %}
@@ -58,9 +58,9 @@ EOHTML
     public function testTwigExceptionGuessWithExceptionAndArrayLoader()
     {
         $loader = new ArrayLoader([
-            'base.html' => '{% block content %}{% endblock %}',
+            'base.html.twig' => '{% block content %}{% endblock %}',
             'index.html' => <<<EOHTML
-{% extends 'base.html' %}
+{% extends 'base.html.twig' %}
 {% block content %}
     {{ foo.bar }}
 {% endblock %}

@@ -3,6 +3,8 @@
 namespace App\Form;
 
 use App\Entity\Competition;
+use App\Entity\Niveau;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -15,7 +17,19 @@ class CompetitionType extends AbstractType
             ->add('nomCompetition')
             ->add('dateCompetition')
             ->add('villeCompetition')
-            ->add('niveaux')
+            ->add('niveaux', EntityType::class, array(
+                'label' => 'Niveaux',
+                'class' => Niveau::class,
+                'multiple' => false,
+                'expanded' => false,
+                'attr'=>[
+                    'class'=>'text-center',
+                ],
+                'choice_label' => function (Niveau $niveau) {
+                    return $niveau->getNiveau();
+                }
+
+            ))
         ;
     }
 

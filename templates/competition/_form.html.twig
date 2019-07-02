@@ -1,4 +1,43 @@
-{{ form_start(form) }}
-    {{ form_widget(form) }}
-    <button class="btn">{{ button_label|default('Save') }}</button>
-{{ form_end(form) }}
+
+{%  block body %}
+    <div class="container">
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-sm-6">
+                {{ form_label(form.nomCompetition)}}
+                {{ form_widget(form.nomCompetition)}}
+                {{ form_errors(form.nomCompetition)}}
+            </div>
+
+            <div class="col-sm-6">
+
+                {{ form_label(form.dateCompetition)}}
+                {{ form_widget(form.dateCompetition)}}
+                {{ form_errors(form.dateCompetition)}}
+
+            </div>
+        </div>
+        <br>
+        <div class="row">
+                <div class="col-sm-6">
+                    {{ form_label(form.villeCompetition)}}
+                    {{ form_widget(form.villeCompetition)}}
+                    {{ form_errors(form.villeCompetition)}}
+                </div>
+
+                <div class="col-sm-6">
+
+                    {{ form_label(form.niveaux)}}
+                    {{ form_widget(form.niveaux)}}
+                    {{ form_errors(form.niveaux)}}
+
+                </div>
+        </div>
+
+                {{ form_end(form) }}
+        <br>
+        <button class="btn btn-lg btn-success" style="float: right;">{{ button_label|default('Créer') }}</button>
+    </div>
+    </div>
+
+{%  endblock %}

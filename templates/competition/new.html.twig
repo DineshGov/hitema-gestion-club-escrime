@@ -3,9 +3,9 @@
 {% block title %}New Competition{% endblock %}
 
 {% block body %}
-    <h1>Create new Competition</h1>
+    <h1 style="text-align: center;margin-top: 2%">Create new Competition</h1>
 
     {{ include('competition/_form.html.twig') }}
 
-    <a href="{{ path('competition_index') }}">back to list</a>
+    <div class="container"><a href="{{ path('competition_index') }}">back to list</a></div>
 {% endblock %}

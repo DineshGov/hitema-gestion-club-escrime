@@ -119,13 +119,13 @@ class DebugCommandTest extends TestCase
         ];
 
         yield 'no template paths configured for your application' => [
-            'input' => ['name' => 'base.html.twig'],
+            'input' => ['name' => 'base.html.twig.twig'],
             'output' => <<<TXT
 
 Matched File
 ------------
 
- Template name "base.html.twig" not found%A
+ Template name "base.html.twig.twig" not found%A
 
 Configured Paths
 ----------------
@@ -174,7 +174,7 @@ TXT
         ];
 
         yield 'matched file' => [
-            'input' => ['name' => 'base.html.twig'],
+            'input' => ['name' => 'base.html.twig.twig'],
             'output' => <<<TXT
 
 Matched File
@@ -260,7 +260,7 @@ Matched File
  Template name "@Twig/eror.html.twig" not found%A
 %A
 %wDid you mean one of these?%A
-%w@Twig/base.html.twig%A
+%w@Twig/base.html.twig.twig%A
 %w@Twig/error.html.twig%A
 
 Configured Paths
@@ -283,7 +283,7 @@ TXT
     public function testDebugTemplateNameWithChainLoader()
     {
         $tester = $this->createCommandTester(['templates/' => null], [], null, null, true);
-        $ret = $tester->execute(['name' => 'base.html.twig'], ['decorated' => false]);
+        $ret = $tester->execute(['name' => 'base.html.twig.twig'], ['decorated' => false]);
 
         $this->assertEquals(0, $ret, 'Returns 0 in case of success');
         $this->assertContains('[OK]', $tester->getDisplay());

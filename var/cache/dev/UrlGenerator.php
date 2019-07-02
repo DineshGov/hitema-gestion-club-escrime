@@ -4,4 +4,10 @@
 
 return [
     '_twig_error_test' => [['code', '_format'], ['_controller' => 'twig.controller.preview_error::previewErrorPageAction', '_format' => 'html'], ['code' => '\\d+'], [['variable', '.', '[^/]++', '_format', true], ['variable', '/', '\\d+', 'code', true], ['text', '/_error']], [], []],
+    'competition_index' => [[], ['_controller' => 'App\\Controller\\CompetitionController::index'], [], [['text', '/competition/']], [], []],
+    'competition_new' => [[], ['_controller' => 'App\\Controller\\CompetitionController::new'], [], [['text', '/competition/new']], [], []],
+    'competition_show' => [['id'], ['_controller' => 'App\\Controller\\CompetitionController::show'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/competition']], [], []],
+    'competition_edit' => [['id'], ['_controller' => 'App\\Controller\\CompetitionController::edit'], [], [['text', '/edit'], ['variable', '/', '[^/]++', 'id', true], ['text', '/competition']], [], []],
+    'competition_delete' => [['id'], ['_controller' => 'App\\Controller\\CompetitionController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/competition']], [], []],
+    'app_default_home' => [[], ['_controller' => 'App\\Controller\\DefaultController::home'], [], [['text', '/home']], [], []],
 ];
