@@ -1,3 +1,6 @@
 
 ###> symfony/framework-bundle ###
+var/
+var/*
 ###< symfony/framework-bundle ###
+
